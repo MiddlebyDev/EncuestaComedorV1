@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/MENU4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/MENU3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/MENU2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/servicio4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/servicio3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/servicio2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvPregunta1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvPregunta2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvPregunta3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvPregunta4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvPregunta5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvPregunta6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/turno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="1dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="right"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="320dp"
+                    android:layout_height="65dp"
+                    app:srcCompat="@drawable/logomexico" />
+
+                <Space
+                    android:layout_width="220dp"
+                    android:layout_height="5dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:gravity="center|center_horizontal|center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Danos tu opinión"
+                        android:textColor="#09263d"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp" />
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="¿En qué turno comes?"
+                        android:textColor="#09263d"
+                        android:textSize="22sp" />
+
+                    <LinearLayout
+                        android:id="@+id/trunocomida"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center|center_horizontal|center_vertical">
+
+                        <CheckBox
+                            android:id="@+id/turno1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onCheckboxClicked"
+                            android:text="Primero"
+                            android:textColor="#09263d"
+                            android:textSize="18sp" />
+
+                        <CheckBox
+                            android:id="@+id/turno2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onCheckboxClicked"
+                            android:text="Segundo"
+                            android:textColor="#09263d"
+                            android:textSize="18sp" />
+
+                        <CheckBox
+                            android:id="@+id/turno3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onCheckboxClicked"
+                            android:text="Tercero"
+                            android:textColor="#09263d"
+                            android:textSize="18sp" />
+
+                        <!--<CheckBox
+                            android:id="@+id/turno4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onCheckboxClicked"
+                            android:text="Cuarto"
+                            android:textColor="#09263d"
+                            android:textSize="18sp" /> -->
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|center_horizontal|center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|center_horizontal|center_vertical"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center|center_horizontal|center_vertical"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/Pregunta1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:gravity="center"
+                                    android:textColor="#09263d"
+                                    android:textSize="20sp" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center|center_horizontal|center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageButton
+                                        android:id="@+id/btnServicio1"
+                                        android:layout_width="78dp"
+                                        android:layout_height="65dp"
+                                        android:adjustViewBounds="true"
+                                        android:background="#00FFFFFF"
+                                        android:onClick="cambiarMano"
+                                        android:scaleType="fitCenter"
+                                        android:tint="#8BC34A"
+                                        app:srcCompat="@drawable/nolike" />
+
+                                    <Space
+                                        android:layout_width="20dp"
+                                        android:layout_height="wrap_content" />
+
+                                    <ImageButton
+                                        android:id="@+id/btnServicioN1"
+                                        android:layout_width="78dp"
+                                        android:layout_height="65dp"
+                                        android:adjustViewBounds="true"
+                                        android:background="#00FFFFFF"
+                                        android:onClick="cambiarMano"
+                                        android:scaleType="fitCenter"
+                                        android:tint="#FF5722"
+                                        app:srcCompat="@drawable/nolikeverde" />
+
+                                </LinearLayout>
+
+                                <Space
+                                    android:layout_width="match_parent"
+                                    android:layout_height="5dp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="120dp"
+                                android:gravity="center|center_horizontal|center_vertical"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/Pregunta2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="5dp"
+                                    android:gravity="center"
+                                    android:textColor="#09263d"
+                                    android:textSize="20sp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center|center_horizontal|center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageButton
+                                        android:id="@+id/btnServicio2"
+                                        android:layout_width="78dp"
+                                        android:layout_height="65dp"
+                                        android:adjustViewBounds="true"
+                                        android:background="#00FFFFFF"
+                                        android:onClick="cambiarMano"
+                                        android:scaleType="fitCenter"
+                                        android:tint="#8BC34A"
+                                        app:srcCompat="@drawable/nolike" />
+
+                                    <Space
+                                        android:layout_width="20dp"
+                                        android:layout_height="wrap_content" />
+
+                                    <ImageButton
+                                        android:id="@+id/btnServicioN2"
+                                        android:layout_width="78dp"
+                                        android:layout_height="65dp"
+                                        android:adjustViewBounds="true"
+                                        android:background="#00FFFFFF"
+                                        android:clickable="true"
+                                        android:onClick="cambiarMano"
+                                        android:scaleType="fitCenter"
+                                        android:tint="#FF5722"
+                                        app:srcCompat="@drawable/nolikeverde" />
+
+                                </LinearLayout>
+
+                                <Space
+                                    android:layout_width="20dp"
+                                    android:layout_height="5dp" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center|center_horizontal|center_vertical"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/Pregunta3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:textColor="#09263d"
+                                    android:textSize="20sp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="70dp"
+                                    android:gravity="center|center_horizontal|center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageButton
+                                        android:id="@+id/btnServicio3"
+                                        android:layout_width="78dp"
+                                        android:layout_height="65dp"
+                                        android:adjustViewBounds="true"
+                                        android:background="#00FFFFFF"
+                                        android:clickable="true"
+                                        android:onClick="cambiarMano"
+                                        android:scaleType="fitCenter"
+                                        android:tint="#8BC34A"
+                                        app:srcCompat="@drawable/nolike" />
+
+                                    <Space
+                                        android:layout_width="20dp"
+                                        android:layout_height="wrap_content" />
+
+                                    <ImageButton
+                                        android:id="@+id/btnServicioN3"
+                                        android:layout_width="78dp"
+                                        android:layout_height="65dp"
+                                        android:adjustViewBounds="true"
+                                        android:background="#00FFFFFF"
+                                        android:clickable="true"
+                                        android:onClick="cambiarMano"
+                                        android:scaleType="fitCenter"
+                                        android:tint="#FF5722"
+                                        app:srcCompat="@drawable/nolikeverde" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center|center_horizontal|center_vertical"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/Pregunta4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:textColor="#09263d"
+                                    android:textSize="20sp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="70dp"
+                                    android:gravity="center|center_horizontal|center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageButton
+                                        android:id="@+id/btnServicio4"
+                                        android:layout_width="78dp"
+                                        android:layout_height="65dp"
+                                        android:adjustViewBounds="true"
+                                        android:background="#00FFFFFF"
+                                        android:clickable="true"
+                                        android:onClick="cambiarMano"
+                                        android:scaleType="fitCenter"
+                                        android:tint="#8BC34A"
+                                        app:srcCompat="@drawable/nolike" />
+
+                                    <Space
+                                        android:layout_width="20dp"
+                                        android:layout_height="wrap_content" />
+
+                                    <ImageButton
+                                        android:id="@+id/btnServicioN4"
+                                        android:layout_width="78dp"
+                                        android:layout_height="65dp"
+                                        android:adjustViewBounds="true"
+                                        android:background="#00FFFFFF"
+                                        android:clickable="true"
+                                        android:onClick="cambiarMano"
+                                        android:scaleType="fitCenter"
+                                        android:tint="#FF5722"
+                                        app:srcCompat="@drawable/nolikeverde" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center|center_horizontal|center_vertical"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/Pregunta5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:textColor="#09263d"
+                                    android:textSize="20sp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="70dp"
+                                    android:gravity="center|center_horizontal|center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageButton
+                                        android:id="@+id/btnServicio5"
+                                        android:layout_width="78dp"
+                                        android:layout_height="65dp"
+                                        android:adjustViewBounds="true"
+                                        android:background="#00FFFFFF"
+                                        android:clickable="true"
+                                        android:onClick="cambiarMano"
+                                        android:scaleType="fitCenter"
+                                        android:tint="#8BC34A"
+                                        app:srcCompat="@drawable/nolike" />
+
+                                    <Space
+                                        android:layout_width="20dp"
+                                        android:layout_height="wrap_content" />
+
+                                    <ImageButton
+                                        android:id="@+id/btnServicioN5"
+                                        android:layout_width="78dp"
+                                        android:layout_height="65dp"
+                                        android:adjustViewBounds="true"
+                                        android:background="#00FFFFFF"
+                                        android:clickable="true"
+                                        android:onClick="cambiarMano"
+                                        android:scaleType="fitCenter"
+                                        android:tint="#FF5722"
+                                        app:srcCompat="@drawable/nolikeverde" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center|center_horizontal|center_vertical"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/Pregunta6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:textColor="#09263d"
+                                    android:textSize="20sp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="70dp"
+                                    android:gravity="center|center_horizontal|center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <ImageButton
+                                        android:id="@+id/btnServicio6"
+                                        android:layout_width="78dp"
+                                        android:layout_height="65dp"
+                                        android:adjustViewBounds="true"
+                                        android:background="#00FFFFFF"
+                                        android:clickable="true"
+                                        android:onClick="cambiarMano"
+                                        android:scaleType="fitCenter"
+                                        android:tint="#8BC34A"
+                                        app:srcCompat="@drawable/nolike" />
+
+                                    <Space
+                                        android:layout_width="20dp"
+                                        android:layout_height="wrap_content" />
+
+                                    <ImageButton
+                                        android:id="@+id/btnServicioN6"
+                                        android:layout_width="78dp"
+                                        android:layout_height="65dp"
+                                        android:adjustViewBounds="true"
+                                        android:background="#00FFFFFF"
+                                        android:clickable="true"
+                                        android:onClick="cambiarMano"
+                                        android:scaleType="fitCenter"
+                                        android:tint="#FF5722"
+                                        app:srcCompat="@drawable/nolikeverde" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:gravity="center|center_horizontal|center_vertical"
+                    android:orientation="vertical">
+
+                    <com.unstoppable.submitbuttonview.SubmitButton
+                        android:id="@+id/send1"
+                        android:layout_width="170dp"
+                        android:layout_height="60dp"
+                        app:buttonText="Enviar" />
+
+                    <!--                    <com.spark.submitbutton.SubmitButton-->
+                    <!--                        android:id="@+id/send1"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="match_parent"-->
+                    <!--                        android:text="Enviar"-->
+                    <!--                        android:textColor="@color/black"-->
+                    <!--                        app:sub_btn_background="@color/white"-->
+                    <!--                        app:sub_btn_duration="1000"-->
+                    <!--                        app:sub_btn_line_color="#F44336"-->
+                    <!--                        app:sub_btn_ripple_color="@color/black"-->
+                    <!--                        app:sub_btn_tick_color="#8BC34A"-->
+                    <!--                        tools:layout_editor_absoluteX="0dp"-->
+                    <!--                        tools:layout_editor_absoluteY="120dp" />-->
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>
