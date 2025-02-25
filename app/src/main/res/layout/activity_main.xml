@@ -102,11 +102,13 @@
                 <ImageView
                     android:id="@+id/imageView3"
                     android:layout_width="320dp"
-                    android:layout_height="65dp"
-                    app:srcCompat="@drawable/logomexico" />
+                    android:layout_height="75dp"
+                    app:srcCompat="@drawable/middleby_logo"
+                    android:scaleType="centerCrop"
+                    />
 
                 <Space
-                    android:layout_width="220dp"
+                    android:layout_width="320dp"
                     android:layout_height="5dp" />
             </LinearLayout>
 
@@ -535,27 +537,14 @@
                     android:gravity="center|center_horizontal|center_vertical"
                     android:orientation="vertical">
 
-                    <com.unstoppable.submitbuttonview.SubmitButton
+                    <Button
                         android:id="@+id/send1"
                         android:layout_width="170dp"
                         android:layout_height="60dp"
-                        app:buttonText="Enviar" />
+                        android:text="Enviar"
+                        android:textColor="#FFFFFF"
 
-                    <!--                    <com.spark.submitbutton.SubmitButton-->
-                    <!--                        android:id="@+id/send1"-->
-                    <!--                        android:layout_width="match_parent"-->
-                    <!--                        android:layout_height="match_parent"-->
-                    <!--                        android:text="Enviar"-->
-                    <!--                        android:textColor="@color/black"-->
-                    <!--                        app:sub_btn_background="@color/white"-->
-                    <!--                        app:sub_btn_duration="1000"-->
-                    <!--                        app:sub_btn_line_color="#F44336"-->
-                    <!--                        app:sub_btn_ripple_color="@color/black"-->
-                    <!--                        app:sub_btn_tick_color="#8BC34A"-->
-                    <!--                        tools:layout_editor_absoluteX="0dp"-->
-                    <!--                        tools:layout_editor_absoluteY="120dp" />-->
-
-
+                        />
                 </LinearLayout>
 
 
@@ -565,5 +554,33 @@
 
     </ScrollView>
 
+    <RelativeLayout
+        android:id="@+id/loading_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#B3000000"
+        android:visibility="gone" >
 
+
+        <TextView
+            android:id="@+id/loading_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="350dp"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:text="😊Gracias, respuestas enviadas.\n ¡Provecho!"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/loading_message"
+            android:layout_centerHorizontal="true"
+            android:indeterminate="true" />
+
+    </RelativeLayout>
 </RelativeLayout>

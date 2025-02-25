@@ -2,6 +2,7 @@ package com.example.encuestacomedor;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.net.wifi.p2p.WifiP2pManager;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,10 +12,11 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.unstoppable.submitbuttonview.SubmitButton;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -29,7 +31,7 @@ import java.util.Timer;
 
 
 public class MainActivity extends AppCompatActivity {
-    SubmitButton send2;
+    Button send2;
     ImageButton btnServicio1, btnServicioN1, btnServicio2, btnServicioN2, btnServicio3, btnServicioN3,
     btnServicio4, btnServicioN4, btnServicio5, btnServicioN5, btnServicio6, btnServicioN6;
 
@@ -38,8 +40,14 @@ public class MainActivity extends AppCompatActivity {
     TextView tvPregunta4, tvPregunta5, tvPregunta6, btnEnviar;
     LinearLayout turnocomida;
 
+
     public static final long PERIODO = 1500; //  x / 1000 = Segundos a esperar
     private Handler handler;
+
+    RelativeLayout loadingLayout;
+    ProgressBar progressBar;
+    TextView loadingMessage;
+
     private Runnable runnable;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,14 +56,20 @@ public class MainActivity extends AppCompatActivity {
 
         conexionDB();
 
+        loadingLayout = findViewById(R.id.loading_layout);
+        progressBar = findViewById(R.id.progress_bar);
+        loadingMessage = findViewById(R.id.loading_message);
         turnocomida = (LinearLayout) findViewById(R.id.trunocomida);
         send2 = findViewById(R.id.send1);
+        send2.setEnabled(true);
+        send2.setBackgroundColor(Color.parseColor("#179c29"));
         send2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 insertar();
             }
         });
+
         pregunta1=(TextView)findViewById(R.id.Pregunta1);
         pregunta2=(TextView)findViewById(R.id.Pregunta2);
         pregunta3=(TextView)findViewById(R.id.Pregunta3);
@@ -201,30 +215,31 @@ public void Consultatabla(){
 
         if (turnos.getText().equals("")){
             Toast.makeText(MainActivity.this, "Debe seleccionar un turno", Toast.LENGTH_LONG).show();
-            send2.doResult(false);
+            //send2.setEnabled(false);
             turnouno.setError("Required");
+            turnodos.setError("Required");
             turnodos.setError("Required");
             turnotres.setError("Required");
             //turnocuatro.setError("Required");
         }
         else if (tvPregunta1.getText().equals("")) {
             Toast.makeText(MainActivity.this, "Falta pregunta 1 ", Toast.LENGTH_LONG).show();
-            send2.doResult(false);
+            //send2.setEnabled(false);
         } else if (tvPregunta2.getText().equals("")) {
             Toast.makeText(MainActivity.this, "Falta pregunta 2 ", Toast.LENGTH_LONG).show();
-            send2.doResult(false);
+            //send2.setEnabled(false);
         } else if (tvPregunta3.getText().equals("")) {
             Toast.makeText(MainActivity.this, "Falta pregunta 3 ", Toast.LENGTH_LONG).show();
-            send2.doResult(false);
+            //send2.setEnabled(false);
         } else if (tvPregunta4.getText().equals("")) {
             Toast.makeText(MainActivity.this, "Falta pregunta 4 ", Toast.LENGTH_LONG).show();
-            send2.doResult(false);
+            //send2.setEnabled(false);
         } else if (tvPregunta5.getText().equals("")) {
             Toast.makeText(MainActivity.this, "Falta pregunta 5 ", Toast.LENGTH_LONG).show();
-            send2.doResult(false);
+            //send2.setEnabled(false);
         } else if (tvPregunta6.getText().equals("")) {
             Toast.makeText(MainActivity.this, "Falta pregunta 6 ", Toast.LENGTH_LONG).show();
-            send2.doResult(false);
+            //send2.setEnabled(false);
         }
         else {
             try {
@@ -240,10 +255,14 @@ public void Consultatabla(){
 
                 pst.executeUpdate();
 
-                send2.doResult(true);
+                send2.setEnabled(false);
+                send2.setBackgroundColor(Color.parseColor("#9e9e9e"));
+                loadingLayout.setVisibility(View.VISIBLE);
+
+
                 timerSubmit();
             } catch (SQLException e) {
-                send2.doResult(false);
+                //send2.setEnabled(false);
                 //System.out.println("insercion-> "+e.getMessage());
                 Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                 timerSubmit();
@@ -287,7 +306,7 @@ public void Consultatabla(){
 
                     break;*/
             }
-            send2.reset();
+            //send2.setEnabled(false);
         } else {
             turnos.setText("");
         }
@@ -413,7 +432,7 @@ public void Consultatabla(){
             default:
                 break;
         }
-        send2.reset();
+        //send2.setEnabled(false);
         timerManos();
     }
 
@@ -453,7 +472,8 @@ public void Consultatabla(){
 
         btnServicio6.setBackgroundResource(R.color.white);
         btnServicioN6.setBackgroundResource(R.color.white);
-
-        send2.reset();
+        loadingLayout.setVisibility(View.GONE);
+        send2.setEnabled(true);
+        send2.setBackgroundColor(Color.parseColor("#179c29"));
     }
 }
